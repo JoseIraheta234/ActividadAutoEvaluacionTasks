@@ -32,7 +32,7 @@ TakskController.deleteTasks = async (req, res) => {
 //update
 
 TakskController.updateTasks = async (req, res) => {
-    const {name, description, status, image} = req.body;
+    const {title, description, completed} = req.body;
     const updatedTasks = await TasksModel.findByIdAndUpdate(req.params.id, {title, description, completed} , {new: true} )
 
     res.json({message: "Updated Tasks"})
